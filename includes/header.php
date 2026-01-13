@@ -1,3 +1,22 @@
+<?php
+// database.php
+$host = "db";
+$port = 3306;
+$dbname = "bibliotheek";
+$user = "biblio";
+$password = "secret";
+
+// Maak verbinding met MySQL
+$conn = new mysqli($host, $user, $password, $dbname, $port);
+
+// Check verbinding
+if ($conn->connect_error) {
+    die("Verbinding mislukt: " . $conn->connect_error);
+}
+
+// Verbinding gelukt
+?>
+
 <!-- html van de header -->
 <nav>
     <a href="index.php">Home</a>

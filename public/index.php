@@ -1,21 +1,40 @@
+<?php
+// database.php
+$host = "db";
+$port = 3306;
+$dbname = "bibliotheek";
+$user = "biblio";
+$password = "secret";
+
+// Maak verbinding met MySQL
+$conn = new mysqli($host, $user, $password, $dbname, $port);
+
+// Check verbinding
+if ($conn->connect_error) {
+    die("Verbinding mislukt: " . $conn->connect_error);
+}
+
+// Verbinding gelukt
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styling/styling.css">
+    <link rel="stylesheet" href="/styling/styling.css">
     <title>Home pagina - De Boekenreus</title>
 </head>
 
 <body>
     <!-- Header in php -->
     <nav>
-        <?php include 'header.php'; ?>
+        <?php require_once __DIR__ . '/../includes/header.php'; ?>
     </nav>
     <div class="content">
         <div class="title">Home</div>
-        <div class=content-box index> 
+        <div class=content-box index>
             <div id="general-text">
                 <strong>
                     <h2>Bibliotheek "De Boekenreus"</h2>
@@ -33,6 +52,7 @@
                 <p>De Boekenreus, waar elk boek een avontuur is!</p>
             </div>
         </div>
+        <!-- verander de foto's -->
         <div class="photos">
             <div class="home"></div>
             <img class=photo src="photos" alt="Bibliotheek fotos">
@@ -41,7 +61,6 @@
         </div>
     </div>
     <!-- footer in php -->
-    <?php include 'footer.php'; ?>
+    <?php require_once __DIR__ . '/../includes/footer.php'; ?>
 </body>
-
 </html>

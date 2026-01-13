@@ -37,6 +37,7 @@
                 <p>bieden we ook een plek om te studeren, te werken of gewoon tot rust te komen</p>
             </div>
             <div class="content-box">
+                <!-- verander de foto's -->
                 <div class="photos">
                     <div class="over-ons"></div>
                     <img class=photo src="photos" alt="Bibliotheek fotos">
