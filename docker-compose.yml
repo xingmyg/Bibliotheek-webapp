@@ -1,4 +1,4 @@
-version: "3.8"
+version: "3.9"
 
 services:
   db:
@@ -12,7 +12,7 @@ services:
     ports:
       - "3307:3306"
     volumes:
-      - db_data:/var/lib/mysql
+      - bibliotheek_db_data:/var/lib/mysql
 
   web:
     build: .
@@ -20,8 +20,11 @@ services:
     ports:
       - "8000:80"
     volumes:
-      # Mount **hele project** naar /var/www/html
-      - ./:/var/www/html
+      - ./public:/var/www/html/public
+      - ./admin:/var/www/html/admin
+      - ./includes:/var/www/html/includes
+      - ./styling:/var/www/html/styling
+      - ./images:/var/www/html/images
     depends_on:
       - db
 
@@ -36,4 +39,4 @@ services:
       - db
 
 volumes:
-  db_data:
+  bibliotheek_db_data:

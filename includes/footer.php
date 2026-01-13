@@ -1,25 +1,6 @@
-<?php
-// database.php
-$host = "db";
-$port = 3306;
-$dbname = "bibliotheek";
-$user = "biblio";
-$password = "secret";
-
-// Maak verbinding met MySQL
-$conn = new mysqli($host, $user, $password, $dbname, $port);
-
-// Check verbinding
-if ($conn->connect_error) {
-    die("Verbinding mislukt: " . $conn->connect_error);
-}
-
-// Verbinding gelukt
-?>
-
 <!-- html voor de footer -->
-<footer class="footer-nav">
-    <div class="footer">
+<footer class="footer">
+    <div class="footer-nav">
         <p>Veel gestelde vragen</p>
         <p>Openingtijden</p>
         <p>Gelegenheden</p>
@@ -27,8 +8,11 @@ if ($conn->connect_error) {
     </div>
 
     <div class="socials">
-        <img src="../images-socials/instagram.png" alt="Instagram logo">
-        <img src="../images-socials/facebook.png" alt="Facebook logo">
-        <img src="../images-socials/youtube.png" alt="Youtube logo">
+        <div class="socials">
+            <img src="includes/logos/instagram.png" alt="Instagram logo">
+            <img src="includes/logos/facebook.png" alt="Facebook logo">
+            <img src="includes/logos/youtube.png" alt="Youtube logo">
+        </div>
+
     </div>
 </footer>
