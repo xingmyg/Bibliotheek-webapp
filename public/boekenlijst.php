@@ -6,60 +6,65 @@ $dbname = "bibliotheek";
 $user = "biblio";
 $password = "secret";
 
-$conn = new mysqli($host, $user, $password, $dbname, $port);
-
-// Check verbinding
-if ($conn->connect_error) {
-    die("Verbinding mislukt: " . $conn->connect_error);
+try {
+    $pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbname;charset=utf8", $user, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Verbinding mislukt: " . $e->getMessage());
 }
 
-// Verbinding gelukt
-?>
-<!DOCTYPE html>
-<html lang="en">
+// Zoekfunctionaliteit
+$zoek = '';
+if (isset($_GET['zoek'])) {
+    $zoek = $_GET['zoek'];
+}
 
+$sql = "SELECT * FROM Boekenlijst";
+if ($zoek != '') {
+    $sql .= " WHERE Titel LIKE :zoek OR Auteur LIKE :zoek";
+}
+
+$stmt = $pdo->prepare($sql);
+
+if ($zoek != '') {
+    $stmt->bindValue(':zoek', '%' . $zoek . '%');
+}
+
+$stmt->execute();
+$boeken = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
+
+<!DOCTYPE html>
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styling/styling.css">
-    <title>Home pagina - De Boekenreus</title>
+    <title>Boekenlijst</title>
 </head>
-
 <body>
-<!-- Header in php -->
-<?php require_once __DIR__ . '/../includes/header-boek.php'; ?>
-<div class="content">
-    <div class="title">Boekenlijst</div>
-    <div class=content-box lijst>
-        <div class="category">
-            <!-- verander de foto's -->
-            <div class="category-title">Fantasy</div>
-            <img class=photo src="photos" alt="Boek fotos">
-            <img class=photo src="photos" alt="Boek fotos">
-            <img class=photo src="photos" alt="Boek fotos">
-            <img class=photo src="photos" alt="Boek fotos">
-            <img class=photo src="photos" alt="Boek fotos">
-        </div>
-        <div class="category">
-            <div class="category-title">Jeugd</div>
-            <img class=photo src="photos" alt="Boek fotos">
-            <img class=photo src="photos" alt="Boek fotos">
-            <img class=photo src="photos" alt="Boek fotos">
-            <img class=photo src="photos" alt="Boek fotos">
-            <img class=photo src="photos" alt="Boek fotos">
-        </div>
-        <div class="category">
-            <div class="category-title">Romantic</div>
-            <img class=photo src="photos" alt="Boek fotos">
-            <img class=photo src="photos" alt="Boek fotos">
-            <img class=photo src="photos" alt="Boek fotos">
-            <img class=photo src="photos" alt="Boek fotos">
-            <img class=photo src="photos" alt="Boek fotos">
-        </div>
-    </div>
-</div>
-<!-- footer in php -->
-<?php require_once __DIR__ . '/../includes/footer.php'; ?>
-</body>
 
+<h1>Boekenlijst</h1>
+
+<form method="get">
+    <input type="text" name="zoek" placeholder="Zoek boek" value="<?php echo($zoek); ?>">
+    <button type="submit">Zoek</button>
+</form>
+
+<ul class="boekenlijst">
+    <?php
+    if (count($boeken) == 0) {
+        echo '<li>Geen boeken gevonden</li>';
+    } else {
+        foreach ($boeken as $boek) {
+            echo '<li>';
+            echo '<strong>' . ($boek['Titel']) . '</strong><br>';
+            echo 'Auteur: ' . ($boek['Auteur']) . '<br>';
+            echo 'ISBN: ' . ($boek['ISBN']) . '<br>';
+            echo 'Status: ' . ($boek['Beschikbaarheid']);
+            echo '</li>';
+        }
+    }
+    ?>
+</ul>
+
+</body>
 </html>

@@ -1,97 +1,108 @@
-/* styling of the body */
+/* basis styling van de pagina */
 body {
     background: #B89676;
     color: #D7BDA6;
-    font-family: 'Lato', sans-serif;
+    font-family: sans-serif;
+    min-height: 100vh;
     margin: 0;
 }
 
 a {
     color: #D7BDA6;
     text-decoration: none;
-    display: inline-block;
-    padding: 10px 30px;
     background-color: #4C2B08;
-    border-radius: 80px;
+    border-radius: 50px;
+    padding: 10px;
 }
 
-/* styling for the paragraphs */
+li {
+    margin-bottom: 10px;
+}
+
 p {
     margin: 0;
 }
 
-nav, footer{
+button,
+input[type="search"] {
+    appearance: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+input[type="search"] {
+    background-color: #4b260a;
+    color: #D7BDA6;
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: none;
+}
+
+input[type="search"]::placeholder {
+    color: #D7BDA6;
+    opacity: 0.7;
+}
+
+/* navigatie */
+nav {
     display: flex;
-    align-items: center;
     justify-content: center;
+    gap: 10%;
     background-color: #6D3914;
-    font-size: 20px;
-    gap: 200px;
     padding: 20px;
 }
 
-.nav-search {
-    display: none;
-}
-
-body.met-zoekbalk .nav-search {
-    display: flex;
-    gap: 10px;
-}
-
 .nav-item {
-    color: #D7BDA6;
-    text-decoration: none;
-    display: inline-block;
-    padding: 10px 30px;
     background-color: #4b260a;
-    border-radius: 80px;
-    font-size: 20px;
-    border: none;
-    cursor: pointer;
+    color: #D7BDA6;
+    padding: 10px 30px;
+    border-radius: 50px;
 }
 
 .nav-item:hover {
     background-color: #5c2f0f;
 }
 
-.nav-search {
-    display: flex;
-    gap: 10px;
-}
-
-.nav-search input {
-    padding: 5px 10px;
-    background: #4b260a;
-    color: #D7BDA6;
-    border-radius: 80px;
-    border: none;
-    font-size: 20px;
-}
-
 .title {
     color: #4C2B08;
     text-align: center;
     font-size: 40px;
-    margin: 20px 0;
-    padding-bottom: 80px;
+    margin: 40px 0;
 }
 
 .content-box {
     display: flex;
-    gap: 30px;
+    gap: 40px;
     flex-wrap: wrap;
-    align-items: flex-start;
+    justify-content: center;
+    padding: 20px;
+}
+
+.general-text {
+    background: #4b260a;
+    padding: 20px;
+    border-radius: 20px;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 
-#general-text {
-    background: #4b260a;
-    padding: 30px;
-    border-radius: 20px;
-    max-width: 600px;
-    color: #D7BDA6;
-    font-size: 1.2rem;
+#name {
+    padding-bottom: 30px;
+}
+
+.home {
+    padding-bottom: 15%;
+}
+
+.faq {
+    padding-bottom: 5%;
+}
+
+.ons {
+    background: #6C2720;
 }
 
 .photos {
@@ -101,11 +112,120 @@ body.met-zoekbalk .nav-search {
 }
 
 .photos .photo {
-    width: 200px;
-    height: 350px;
+    width: 230px;
+    height: 450px;
     border-radius: 20px;
     object-fit: cover;
-    border: 4px solid #4b260a;
+    border: 10px solid #4b260a;
 }
 
+.login-container {
+    background-color: #4b260a;
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 350px;
+    margin: 80px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
 
+.login-container h1 {
+    text-align: center;
+    color: #D7BDA6;
+    margin-bottom: 10px;
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.login-container label {
+    font-size: 14px;
+}
+
+.login-container input {
+    background-color: #6D3914;
+    color: #D7BDA6;
+    padding: 10px 15px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    background-color: #6D3914;
+    color: #D7BDA6;
+    border-radius: 50px;
+    border: none;
+    padding: 10px 15px;
+}
+
+.login-container button {
+    margin-top: 15px;
+    background-color: #6D3914;
+    color: #D7BDA6;
+    padding: 10px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+}
+
+.login-container button:hover {
+    background-color: #5c2f0f;
+}
+
+.boekenlijst {
+    list-style: none;
+    padding: 0;
+}
+
+.boekenlijst li {
+    margin-bottom: 15px;
+}
+
+input {
+    padding: 5px;
+}
+
+button {
+    padding: 5px;
+}
+
+.faq {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 20px;
+}
+
+.faq .title {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #6D3914;
+    padding: 10px 20px;
+    margin-top: auto;
+}
+
+.footer-nav p {
+    margin: 4px 0;
+}
+
+.socials {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.socials img {
+    width: 50px;
+}

@@ -22,7 +22,7 @@ services:
     volumes:
       - ./public:/var/www/html/public
       - ./admin:/var/www/html/admin
-      - ./includes:/var/www/html/includes
+      - ./components:/var/www/html/components
       - ./styling:/var/www/html/styling
       - ./images:/var/www/html/images
     depends_on:
