@@ -2,6 +2,8 @@
 ob_start();
 session_start();
 
+require_once __DIR__ . '/database.php';
+
 $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :gebruikersnaam AND wachtwoord = :wachtwoord");
 $stmt->bindParam(':gebruikersnaam', $_POST['gebruikersnaam']);
 $stmt->bindParam(':wachtwoord', $_POST['wachtwoord']);
@@ -14,7 +16,7 @@ if ($result == false) {
 }
 else {
     $_SESSION['toegang'] = true;
-    header('Location: admin-panel.php');
+    header('Location: admin/admin-panel.php');
 }
 ?>
 

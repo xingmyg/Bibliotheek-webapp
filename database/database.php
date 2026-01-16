@@ -1,4 +1,6 @@
+<!-- database -->
 <?php
+
 $host = "db";
 $dbname = "bibliotheek";
 $user = "biblio";
@@ -12,5 +14,3 @@ try {
 }
 
 ?>
-
-
