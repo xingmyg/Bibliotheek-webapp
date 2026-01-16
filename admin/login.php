@@ -1,7 +1,3 @@
-<?php
-session_start();
-// Hier komt later PHP code om in te loggen
-?>
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -12,7 +8,7 @@ session_start();
 <body>
 <div class="login-container">
     <h1>Login</h1>
-    <form method="post" action="login-verwerken.php">
+    <form method="post" action="login-check.php">
         <label>Gebruikersnaam</label>
         <input type="text" name="username" required>
         <label>Wachtwoord</label>
@@ -22,4 +18,3 @@ session_start();
 </div>
 </body>
 </html>
-

@@ -155,9 +155,8 @@ nav {
     outline: none;
 }
 
-input[type="text"],
 input[type="password"],
-input[type="email"] {
+input[type="text"] {
     background-color: #6D3914;
     color: #D7BDA6;
     border-radius: 50px;
@@ -177,23 +176,6 @@ input[type="email"] {
 
 .login-container button:hover {
     background-color: #5c2f0f;
-}
-
-.boekenlijst {
-    list-style: none;
-    padding: 0;
-}
-
-.boekenlijst li {
-    margin-bottom: 15px;
-}
-
-input {
-    padding: 5px;
-}
-
-button {
-    padding: 5px;
 }
 
 .faq {
