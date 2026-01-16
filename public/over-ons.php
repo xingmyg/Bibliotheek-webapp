@@ -10,7 +10,7 @@
 
 <body>
 <!-- Header in php -->
-<?php require_once __DIR__ . '/components/header.php'; ?>
+<?php include_once __DIR__ . '/components/header.php'; ?>
 <div class="content">
     <div class="title">Over Ons</div>
     <div class=content-box>
@@ -54,18 +54,17 @@
                     mooier maakt.
                     Boeken hebben de kracht om je mee te nemen naar nieuwe werelden, je te laten lachen,</p>
                 <p> nadenken of zelfs inspireren tot iets groots. </p>
-                <p>
-                    Er is weinig fijner dan het moment waarop je precies dat ene boek vindt dat je niet meer kunt
-                    wegleggen.
-                    Het boek dat je urenlang in je greep houdt, dat je doet vergeten dat de tijd voorbij vliegt. Dat is
-                    het
-                    gevoel dat wij willen delen met iedereen die onze bibliotheek bezoekt.
+                <>
+                Er is weinig fijner dan het moment waarop je precies dat ene boek vindt dat je niet meer kunt
+                wegleggen.
+                Het boek dat je urenlang in je greep houdt, dat je doet vergeten dat de tijd voorbij vliegt. <br>Dat is
+                het gevoel dat wij willen delen met iedereen die onze bibliotheek bezoekt.</br>
                 </p>
                 <p>
                     Dus stap gerust binnen, snuffel door de rekken, ontdek onbekende verhalen of herontdek oude
                     favorieten.
-                    Bij De Boekenreus vind je voor jong en oud altijd iets dat je nieuwsgierigheid prikkelt en je hart
-                    raakt.
+                    <br>Bij De Boekenreus vind je voor jong en oud altijd iets dat je nieuwsgierigheid prikkelt en je hart
+                    raakt.</br>
                 </p>
                 <p>
                     Of je nu een vaste bezoeker bent of voor het eerst binnenloopt: laat je verrassen, laat je
@@ -84,6 +83,6 @@
 </div>
 <!-- footer in php -->
 <!-- footer in php -->
-<?php require_once __DIR__ . '/components/footer.php'; ?>
+<?php include_once __DIR__ . '/components/footer.php'; ?>
 </body>
 </html>

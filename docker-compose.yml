@@ -25,6 +25,7 @@ services:
       - ./components:/var/www/html/components
       - ./styling:/var/www/html/styling
       - ./images:/var/www/html/images
+      - ./database:/var/www/html/database
     depends_on:
       - db
 

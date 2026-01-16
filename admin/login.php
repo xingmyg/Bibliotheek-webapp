@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-
-
 <html lang="nl">
 <head>
     <meta charset="utf-8">
@@ -8,6 +6,7 @@
     <link rel="stylesheet" href="/styling/styling.css">
 </head>
 <body>
+<?php include_once __DIR__ . '/../public/components/header.php'; ?>
 <div class="login-container">
     <h1>Login</h1>
     <form method="post" action="login-check.php">
@@ -18,5 +17,6 @@
         <button type="submit">Inloggen</button>
     </form>
 </div>
+<?php include_once __DIR__ . '/../public/components/footer.php'; ?>
 </body>
 </html>

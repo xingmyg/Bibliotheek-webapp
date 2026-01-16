@@ -10,7 +10,7 @@
 
 <body>
 <!-- Header in php -->
-<?php require_once __DIR__ . '/components/header.php'; ?>
+<?php include_once __DIR__ . '/components/header.php'; ?>
 <div class="content home">
     <div class="title">Home</div>
     <div class=content-box>
@@ -31,8 +31,8 @@
             </p>
             <p>
                 Wij geloven dat lezen verbindt, verrijkt en de verbeelding voedt. Het opent deuren naar nieuwe
-                werelden, geeft ontspanning en stimuleert creativiteit. Of je nu jong bent of oud, fervent lezer of
-                nieuwsgierige bezoeker, bij De Boekenreus is er voor ieder wat wils.
+                werelden, geeft ontspanning en stimuleert creativiteit.<br>Of je nu jong bent of oud, fervent lezer of
+                nieuwsgierige bezoeker, bij De Boekenreus is er voor ieder wat wils.</br>
             </p>
         </div>
         <div class="general-text evenementen">
@@ -62,6 +62,6 @@
     </div>
 </div>
 <!-- footer in php -->
-<?php require_once __DIR__ . '/components/footer.php'; ?>
+<?php include_once __DIR__ . '/components/footer.php'; ?>
 </body>
 </html>

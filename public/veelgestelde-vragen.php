@@ -8,7 +8,7 @@
 </head>
 <body>
 <!-- Header in php -->
-<?php require_once __DIR__ . '/components/header.php'; ?>
+<?php include_once __DIR__ . '/components/header.php'; ?>
 <div class="content faq">
     <div class="title">veelgestelde vragen</div>
     <div class="content-box faq">
@@ -47,6 +47,6 @@
         </div>
     </div>
 </div>
-<?php require_once __DIR__ . '/components/footer.php'; ?>
+<?php include_once __DIR__ . '/components/footer.php'; ?>
 </body>
 </html>
