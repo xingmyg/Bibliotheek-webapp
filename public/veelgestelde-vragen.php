@@ -22,10 +22,6 @@
                         maken.</p>
                 </li>
                 <li>
-                    <strong>Wat zijn de openingstijden?</strong>
-                    <p>Onze bibliotheek is geopend van maandag tot en met zaterdag, van 9:00 tot 18:00 uur.</p>
-                </li>
-                <li>
                     <strong>Kan ik boeken reserveren?</strong>
                     <p>Ja, leden kunnen boeken online reserveren via hun account of aan de balie.</p>
                 </li>

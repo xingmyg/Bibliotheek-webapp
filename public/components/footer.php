@@ -1,7 +1,7 @@
 <footer class="footer">
     <div class="footer-nav">
         <a href="/public/veelgestelde-vragen.php">FAQ</a>
-        <a href="/public/contact.php">Contact</a>
+        <a href="/public/contact-opening.php">Contact & Openingstijden</a>
     </div>
 
     <div class="socials">
