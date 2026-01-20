@@ -8,6 +8,7 @@ if (!isset($_SESSION['toegang']) || $_SESSION['toegang'] !== true) {
 
 require_once __DIR__ . '/../database/database.php';
 
+// Check of er een ID is én of het een nummer is (veiligheid)
 if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     try {
         $stmt = $pdo->prepare("DELETE FROM boeken WHERE id = :id");
