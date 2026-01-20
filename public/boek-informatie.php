@@ -25,7 +25,9 @@ if (!$boek) {
 
 <div class="content">
     <div class="title">Boek informatie</div>
-    <div class="title"><?= $boek['titel'] ?></div>
+    <strong>
+        <div class="title"><?= $boek['titel'] ?></div>
+    </strong>
     <div class="content-box informatie">
         <div class="general-text">
             <a href="boekenlijst.php">← Terug naar de lijst</a>

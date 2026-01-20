@@ -1,11 +1,7 @@
 <?php
 session_start();
 
-// Dit ene commando is genoeg om opslaan in de geschiedenis te voorkomen
-header("Cache-Control: no-store");
-
-// Check: ben je ingelogd? Zo niet -> wegwezen
-if (empty($_SESSION['toegang'])) {
+if (!isset($_SESSION['toegang']) || $_SESSION['toegang'] !== true) {
     header('Location: login.php');
     exit;
 }

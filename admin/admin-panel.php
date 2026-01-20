@@ -27,7 +27,7 @@ $boeken = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <div class="title">Admin Panel</div>
 
     <div class="content-box">
-        <div class="general-text" style="max-width: 900px; width: 100%;">
+        <div class="general-text"
             <h2>Boeken Beheer</h2>
             <br>
             <a href="boek-toevoegen.php" style="color: lightgreen;">+ Nieuw Boek Toevoegen</a>
