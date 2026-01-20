@@ -1,15 +1,17 @@
 <?php
-ob_start();
 session_start();
 
+// vraag de database op, niet gevonden dan draait er niks
 require_once __DIR__ . '/../database/database.php';
 
+// prepare, want user input kan altijd veranderen, zoek of het klopt
 $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :gebruikersnaam AND wachtwoord = :wachtwoord");
 $stmt->bindParam(':gebruikersnaam', $_POST['username']);
 $stmt->bindParam(':wachtwoord', $_POST['password']);
 $stmt->execute();
 $result = $stmt->fetch();
 
+// check of je toegang hebt ja of nee
 if ($result == false) {
     echo "Login klopt niet";
     $_SESSION['toegang'] = false;
@@ -19,4 +21,3 @@ if ($result == false) {
     header('Location: /admin/admin-panel.php');
     exit;
 }
-?>

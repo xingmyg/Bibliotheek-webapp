@@ -10,10 +10,11 @@ session_start();
 </head>
 <body>
 
-<?php require_once __DIR__ . '/components/header.php'; ?>
+<!-- Header in php -->
+<?php include_once __DIR__ . '/components/header.php'; ?>
 <div class="content home">
     <div class="title">Home</div>
-    <div class=content-box>
+    <div class="content-box contact">
         <div class="general-text">
             <h3>Adresgegevens</h3>
             <p class="dikgedrukt">De Centrale Bibliotheek</p>
@@ -36,7 +37,8 @@ session_start();
     </div>
 </div>
 
-<?php require_once __DIR__ . '/components/footer.php'; ?>
+<!-- footer in php -->
+<?php include_once __DIR__ . '/components/footer.php'; ?>
 
 </body>
 </html>

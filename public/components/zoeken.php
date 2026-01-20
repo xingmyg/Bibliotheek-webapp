@@ -1,17 +1,18 @@
 <?php
-// 1. Verbinding maken met de database
-// We moeten nu TWEE mappen terug (../../) om bij de database map te komen
+// vraag de database op, niet gevonden dan draait er niks
 require_once __DIR__ . '/../../database/database.php';
 
-// 2. Zoekterm ophalen
+// Zoekterm ophalen
 $zoekterm = $_GET['zoek'] ?? '';
 $resultaten = [];
 
 // Alleen zoeken als er iets is ingevuld
 if (!empty($zoekterm)) {
     try {
-        // Zoeken in de database (titel, ISBN of beschrijving)
+// Zoeken in de database (titel, ISBN of beschrijving)
         $stmt = $pdo->prepare("SELECT * FROM boeken WHERE titel LIKE :term OR isbn LIKE :term OR omschrijving LIKE :term");
+
+// Het % teken is een wildcard, maakt niet uit wat er voor of achter de term staat
         $stmt->execute([':term' => '%' . $zoekterm . '%']);
         $resultaten = $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
@@ -34,38 +35,44 @@ if (!empty($zoekterm)) {
 
 <div class="content">
     <div class="title">
-        <?php echo $zoekterm ? "Resultaten voor: '$zoekterm'" : "Zoeken"; ?>
+
+        <!-- is er wat ingevuld geef het terug, anders niks -->
+        <?php if ($zoekterm) {
+            echo "Resultaten voor: '$zoekterm'";
+        } else {
+            echo "Zoeken";
+        } ?>
     </div>
-    <div class="general-text">
-        <a href="../index.php">← Terug naar home pagina</a>
-    <div class="content-box">
-        <?php if (!empty($zoekterm) && count($resultaten) > 0): ?>
 
-            <?php foreach ($resultaten as $boek): ?>
-                <div class="general-text">
-                    <h2><?php echo $boek['titel']; ?></h2>
+    <div class="search-container">
+        <div style="text-align: center; margin-bottom: 20px;">
+            <a href="../index.php">← Terug naar home pagina</a>
+        </div>
 
-                    <p><strong>Status:</strong> <?php echo $boek['status'] ?? 'Onbekend'; ?></p>
-                    <p><strong>ISBN:</strong> <?php echo $boek['isbn']; ?></p>
-                    <br>
-                    <p><?php echo $boek['omschrijving']; ?></p>
-                </div>
-            <?php endforeach; ?>
+        <div class="content-box zoeken">
+            <!-- als zoekterm neit leeg is en meer dan 0 boeken gevonden, ga door -->
+            <?php if (!empty($zoekterm) && count($resultaten) > 0): ?>
+                <?php foreach ($resultaten as $boek): ?>
+                    <div class="general-text">
+                        <h2><?php echo $boek['titel']; ?></h2>
 
-        <?php elseif (!empty($zoekterm)): ?>
-            <div class="general-text">
-                <p>Geen boeken gevonden voor '<?php echo $zoekterm; ?>'.</p>
-            </div>
+                        <!-- is de status leeg, placeholder onbekend -->
+                        <p><strong>Status:</strong><?php echo $boek['status'] ?? 'Onbekend'; ?></p>
+                        <p><strong>ISBN:</strong><?php echo $boek['isbn']; ?></p>
+                        <h3>Omschrijving:</h3>
 
-        <?php else: ?>
-            <div class="general-text">
-                <p>Vul hierboven een zoekterm in.</p>
-            </div>
-        <?php endif; ?>
+                        <!-- Door nl2br vervangt hij enters naar br-->
+                        <p><?php echo nl2br($boek['omschrijving']) ?></p>
+                    </div>
+
+                <!-- eindig for loop -->
+                <?php endforeach; ?>
+
+            <!-- eindig if statement -->
+            <?php endif; ?>
+        </div>
     </div>
 </div>
-
 <?php include_once __DIR__ . '/footer.php'; ?>
-
 </body>
 </html>

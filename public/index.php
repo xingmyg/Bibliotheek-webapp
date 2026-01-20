@@ -55,7 +55,6 @@
                 </li>
             </ul>
         </div>
-        <!-- verander de foto's -->
         <div class="photos">
             <img class=photo src="images/bieb-home1.png" alt="Bibliotheek fotos">
         </div>
