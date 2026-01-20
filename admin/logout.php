@@ -1,1 +1,7 @@
-<a href="../../index.php" class="nav-item">Logout</a>
+<?php
+ob_start();
+session_start();
+session_destroy();
+
+header('Location: login.php');
+?>

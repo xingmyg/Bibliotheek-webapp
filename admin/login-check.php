@@ -13,6 +13,7 @@ $result = $stmt->fetch();
 if ($result == false) {
     echo "Login klopt niet";
     $_SESSION['toegang'] = false;
+    header('Location: /admin/login.php');
 } else {
     $_SESSION['toegang'] = true;
     header('Location: /admin/admin-panel.php');

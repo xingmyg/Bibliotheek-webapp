@@ -14,7 +14,6 @@
 <div class="content">
     <div class="title">Over Ons</div>
     <div class=content-box>
-        <!-- verander de foto's -->
         <div class="photos">
             <div class="over-ons"></div>
             <img class=photo src="images/ons1.png" alt="Bibliotheek fotos">
@@ -81,7 +80,6 @@
         </div>
     </div>
 </div>
-<!-- footer in php -->
 <!-- footer in php -->
 <?php include_once __DIR__ . '/components/footer.php'; ?>
 </body>

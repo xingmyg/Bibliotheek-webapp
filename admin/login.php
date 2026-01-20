@@ -7,15 +7,18 @@
 </head>
 <body>
 <?php include_once __DIR__ . '/../public/components/header.php'; ?>
-<div class="login-container">
-    <h1>Login</h1>
-    <form method="post" action="login-check.php">
-        <label>Gebruikersnaam</label>
-        <input type="text" name="username" required>
-        <label>Wachtwoord</label>
-        <input type="password" name="password" required>
-        <button type="submit">Inloggen</button>
-    </form>
+<div id="login">
+    <div class="title">Login</div>
+    <div class="login-container">
+        <h1>Login</h1>
+        <form method="post" action="login-check.php">
+            <label>Gebruikersnaam</label>
+            <input type="text" name="username" required>
+            <label>Wachtwoord</label>
+            <input type="password" name="password" required>
+            <button type="submit">Inloggen</button>
+        </form>
+    </div>
 </div>
 <?php include_once __DIR__ . '/../public/components/footer.php'; ?>
 </body>

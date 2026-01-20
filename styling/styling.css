@@ -94,7 +94,7 @@ nav {
 }
 
 .home {
-    padding-bottom: 15%;
+    padding-bottom: 12%;
 }
 
 .faq {
@@ -119,6 +119,22 @@ nav {
     border: 10px solid #4b260a;
 }
 
+.boek-item {
+    background: #4b260a;
+    color: #D7BDA6;
+    padding: 20px;
+    border-radius: 20px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.boek-item h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
 .login-container {
     background-color: #4b260a;
     padding: 30px;
@@ -128,6 +144,10 @@ nav {
     display: flex;
     flex-direction: column;
     gap: 15px;
+}
+
+#login {
+    padding-bottom: 18%;
 }
 
 .login-container h1 {
@@ -178,6 +198,67 @@ input[type="text"] {
     background-color: #5c2f0f;
 }
 
+/* Tabel styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    color: #D7BDA6;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #5c2f0f;
+}
+
+th {
+    background-color: #5c2f0f;
+    color: #fff;
+}
+
+/* Formulier styling */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #6D3914;
+    color: #D7BDA6;
+    border: none;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.boek-kaart {
+    width: 300px;
+    text-align: center;
+}
+.boekenlijst {
+    padding-bottom: 9%;
+}
+
+.informatie {
+    padding-bottom: 24%;
+}
+.adminknop {
+    margin-top: 15px;
+    background-color: #6D3914;
+    color: #D7BDA6;
+    padding: 10px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
 .faq {
     max-width: 700px;
     margin: 0 auto;
@@ -211,3 +292,4 @@ input[type="text"] {
 .socials img {
     width: 50px;
 }
+
